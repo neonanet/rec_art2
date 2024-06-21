@@ -10,7 +10,7 @@ import faiss
 # Загрузка данных
 @st.cache_data
 def load_data():
-    return pd.read_csv("/Users/marinakochetova/Downloads/cosmo_sum2.csv")
+    return pd.read_csv("rec_art2/cosmo_sum2.csv")
 
 # Загрузка эмбеддингов для текстов статей
 @st.cache_data
@@ -129,8 +129,8 @@ st.markdown(
 st.markdown('<div style="text-align: center; font-size: 16px;"></div>', unsafe_allow_html=True)
 
 df = load_data()
-embed_text_path = "/Users/marinakochetova/Downloads/embeddings_brt_cosmo_text.pth"
-embed_title_path = "/Users/marinakochetova/Downloads/embeddings_brt_cosmo_title.pth"
+embed_text_path = "rec_art2/embeddings_brt_cosmo_text.pth"
+embed_title_path = "rec_art2//embeddings_brt_cosmo_title.pth"
 embeddings_text = load_embeddings_text(embed_text_path)
 embeddings_title = load_embeddings_title(embed_title_path)
 index_text = initialize_faiss_index_text(embeddings_text)
